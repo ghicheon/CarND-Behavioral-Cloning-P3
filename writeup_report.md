@@ -150,12 +150,18 @@ To capture good driving behavior, I first recorded two laps on track one using c
 ![alt text][right_image]         
 
 I used flipped images for each images.      
+
+normal image...     
 ![alt text][normal_image]          
+
+flipped image...   
 ![alt text][flipped_image]          
 
 I also used early stopping and checkpoint of keras. I could save training time  because I don't need to calculate the number of epoches.    
 But I experienced the validation loss was decreased after many epoches. Because of this, I set "patience" parameter to 5.    
 At first, Preprocessing time took lots of time because my system doesn't have enough memory. Thanks to generator, I could figure out this problem.    
-I draw the history graph using traing loss and validation loss.   
+I draw the history graph using traing loss and validation loss.   Final validation loss is 0.03348 at 7 epoch.
 
 ![alt text][history_image]
+
+
