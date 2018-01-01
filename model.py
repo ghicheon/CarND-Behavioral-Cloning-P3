@@ -25,7 +25,7 @@ import pickle
 list=[]    # it has all entries of cvs files.
 
 #number of epochs
-N_EPOCHS = 1
+N_EPOCHS = 20
 
 # the number of entries of cvs files.
 REAL_ENTRY_SIZE = 16
@@ -69,7 +69,7 @@ print("data4test size(cvs entries):", len(data4test))
 print("----------------------------")
 
 #management value needs to be added a little bit for left camera image.
-#management value needs to be reduced a little for left camera image.
+#management value needs to be reduced a little for right camera image.
 correction_factor=[0 ,0.20 ,-0.20 ]
 
 # batch_size means the number of data for training per batch.
@@ -141,8 +141,8 @@ model.summary()
 
 model.compile(loss='mse',optimizer='adam')
 
-#early stopping for validation loss. I set patient to 3 because sometimes, the loss decreses a little bit later...
-early = EarlyStopping(monitor='val_loss', min_delta=0, patience=3, verbose=0, mode='auto')
+#early stopping for validation loss. I set patience to 5 because sometimes, the loss decreses a little bit later...
+early = EarlyStopping(monitor='val_loss', min_delta=0, patience=5, verbose=0, mode='auto')
 
 #save only best model so far.
 checkpoint = ModelCheckpoint('model.h5', monitor='val_loss', verbose=1, save_best_only=True, mode='min')
@@ -202,7 +202,7 @@ plt.legend(['training set', 'validation set'], loc='upper right')
 plt.show()
 
 
-#delete(?) some error messages in the end.
+#surpress some error messages in the end.
 import gc
 gc.collect()
 
