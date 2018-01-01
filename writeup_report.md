@@ -164,3 +164,11 @@ I draw the history graph using traing loss and validation loss.   the lowest val
 
 ![alt text][history_image]
 
+
+
+
+               
+P.S.                  
+Data file for training can't be uploaded in github because of the size 650M.   
+training data zip file link in dropbox:     
+https://www.dropbox.com/s/koi0dddz852ja6h/my_data.zip?dl=0     
