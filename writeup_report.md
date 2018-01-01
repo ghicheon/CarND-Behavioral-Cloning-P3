@@ -75,16 +75,16 @@ I used nomal center lane driving for around 4 laps.
 
 I used center/left/right camera images and flipped images. In summary, I could get 6 training  data per a cvs file entry. 
 
-Actually, I was about to add recovering driving and reverse center lane driver.if it's not proper.     
-However for my model, center lane driving data is enough to get a expected result.   
+Actually, I was about to add recovering driving and reverse center lane driver if the expected result can not be achieved with this data.
+However, for my model, center lane driving data is enough to get a good result.   
 
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
 
 I created the model based on NVIDIA model.    
-It seems to suffer from overfitting  because validation loss is much higher that training loss. Even if many epoches was done, validation loss didn't decrese.    
-Because of this, I used less nodes in fully connected layers and added drop out layers.  0.5 was used for  drop out rate. (I tried 0.2 ,0.3 and so on. Finally,I found out small rate didn't make a good result)   
+It seems to suffer from overfitting  because validation loss is much higher that training loss. Even if many epoches was done, validation loss didn't decrease.    
+Because of this, I used less nodes in fully connected layers and added drop out layers.  0.5 was used for  drop out rate. (I tried 0.2 ,0.3 and so on. Finally,I found out small rate couldn't make a good result)   
 
 I divided the training data into 3 parts for training,validation, and test. 70% is for training. 20% is for validation. 10% is for test.
 
@@ -143,7 +143,7 @@ Non-trainable params: 0
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+I'll show center/left/right data set examples.    
 
 ![alt text][center_image]         
 ![alt text][left_image]            
@@ -157,11 +157,10 @@ normal image...
 flipped image...   
 ![alt text][flipped_image]          
 
-I also used early stopping and checkpoint of keras. I could save training time  because I don't need to calculate the number of epoches.    
-But I experienced the validation loss was decreased after many epoches. Because of this, I set "patience" parameter to 5.    
+I also used early stopping and checkpoint of keras. I could save training time  because I don't need to calculate the number of epoches by hand.    
+But I experienced that sometimes the validation loss was decreased after many epoches. Because of this, I set "patience" parameter to 5.    
 At first, Preprocessing time took lots of time because my system doesn't have enough memory. Thanks to generator, I could figure out this problem.    
-I draw the history graph using traing loss and validation loss.   Final validation loss is 0.03348 at 7 epoch.
+I draw the history graph using traing loss and validation loss.   the lowest validation loss is 0.03348 at 7 epoch.
 
 ![alt text][history_image]
-
 
