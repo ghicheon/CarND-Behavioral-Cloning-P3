@@ -78,6 +78,9 @@ I used center/left/right camera images and flipped images. In summary, I could g
 Actually, I was about to add recovering driving and reverse center lane driver if the expected result can not be achieved with this data.
 However, for my model, center lane driving data is enough to get a good result.   
 
+I used local GPU. Data file paths in model.py needs to be changed if it is trained in another machine.    
+I uploaded training data in dropbox.   
+
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
