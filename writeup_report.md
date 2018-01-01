@@ -19,8 +19,8 @@ The goals / steps of this project are the following:
 [left_image]:  ./left_2017_12_30_21_40_10_739.jpg      "left"
 [right_image]: ./right_2017_12_30_21_40_10_739.jpg     "right"
 
-[normal_image]: ./left_2017_12_30_21_40_10_739.jpg      "normal"
-[flipped_image]:  ./flipped_left_2017_12_30_21_40_10_739.png   "Flipped"
+[normal_image]:   ./left_2017_12_30_21_40_10_739.jpg      "normal"
+[flipped_image]:  ./flipped_left_2017_12_30_21_40_10_739.jpg   "Flipped"
 
 [history_image]:  ./train_valid_history.png   "train_valid_loss"
 
